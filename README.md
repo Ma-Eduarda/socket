@@ -2,14 +2,13 @@
 
 Aplicação cliente-servidor via sockets TCP. O servidor, desenvolvido em Java,
 atende até **3 clientes simultaneamente** e disponibiliza operações matemáticas
-e o envio de uma imagem.
+e o envio de uma imagem base64.
 
 ## Funcionalidades
 
 - Divisão, adição e subtração de dois números;
 - Solicitação da imagem disponível no servidor;
 - Cliente em Java e cliente em Python;
-- Limite de três conexões simultâneas.
 
 ## Requisitos
 
@@ -55,12 +54,6 @@ Cliente Python:
 python Cliente.py
 ```
 
-> O nome do arquivo no projeto é `Cliente.py`, com **C maiúsculo**. Em sistemas
-> que diferenciam maiúsculas de minúsculas, `python cliente.py` não funcionará.
-
-É possível abrir até três clientes ao mesmo tempo. Ao tentar conectar um quarto
-cliente, o servidor responderá `ERRO: servidor cheio`.
-
 ## Menu do cliente
 
 | Opção | Ação |
@@ -85,8 +78,3 @@ src/
 └── imagem_servidor.png    # Imagem enviada pelo servidor
 ```
 
-## Observações
-
-- Servidor e clientes se comunicam localmente em `127.0.0.1:12345`.
-- A divisão por zero retorna `ERRO: divisao por zero`.
-- Para encerrar o servidor, use `Ctrl + C` no terminal em que ele está em execução.
