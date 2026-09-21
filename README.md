@@ -64,8 +64,7 @@ python Cliente.py
 | `4` | Baixa a imagem do servidor |
 | `0` | Encerra a conexão |
 
-Os números podem ser informados com vírgula ou ponto decimal. Ao escolher a
-opção `4`, a imagem recebida é salva como `imagem_recebida.png` dentro de `src`.
+Ao escolher a opção `4`, a imagem recebida é salva como `imagem_recebida.png` dentro de `src`.
 
 ## Estrutura
 
