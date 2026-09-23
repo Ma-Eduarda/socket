@@ -68,7 +68,7 @@ public class Cliente {
                     System.out.println();
 
                 } else {
-                    System.out.println(resposta);
+                    System.out.println("Resultado: " + resposta);
                     System.out.println();
                 }
 
