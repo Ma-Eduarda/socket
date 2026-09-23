@@ -15,7 +15,7 @@ public class Conexao {
 
     public void iniciar() {
 
-        Thread ler = new Thread(() -> {
+        Thread ler_do_socket = new Thread(() -> {
             try {
                 Scanner entrada = new Scanner(socket.getInputStream());
                 while (entrada.hasNextLine()) {
@@ -24,7 +24,7 @@ public class Conexao {
                     if (mensagem.equals("0")) {
                         break;
                     }
-                    fila.put(processar(mensagem));
+                    fila.put(processarRequisicao(mensagem));
                 }
                 fila.put("CONEXAO ENCERRADA!");
             } catch (IOException | InterruptedException e) {
@@ -32,7 +32,7 @@ public class Conexao {
             }
         });
 
-        Thread escrever = new Thread(() -> {
+        Thread escrever_no_socket = new Thread(() -> {
             try {
                 PrintStream saida = new PrintStream(socket.getOutputStream(), true);
                 String mensagem;
@@ -46,15 +46,15 @@ public class Conexao {
             } catch (IOException | InterruptedException e) {
                 System.out.println("Erro na escrita: " + e.getMessage());
             } finally {
-                fechar();
+                fecharConexao();
             }
         });
 
-        ler.start();
-        escrever.start();
+        ler_do_socket.start();
+        escrever_no_socket.start();
     }
 
-    void fechar() {
+    void fecharConexao() {
         try {
             socket.close();
         } catch (IOException e) {
@@ -77,7 +77,7 @@ public class Conexao {
         );
     }
 
-    String processar(String mensagem) {
+    String processarRequisicao(String mensagem) {
         try {
             String[] partes = mensagem.trim().split("\\s+");
             String opcao = partes[0];
