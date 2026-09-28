@@ -42,10 +42,9 @@ while True:
         break
 
     if opcao == "4" and not resposta.startswith("ERRO"):
-        with open("imagem_recebida.png", "wb") as arquivo:
+        with open("carameloPedreiro.jpg", "wb") as arquivo:
             arquivo.write(base64.b64decode(resposta))
-        print("Imagem recebida e salva como imagem_recebida.png")
-        print()
+        print("Imagem recebida!")
         
     else:
         print("Resultado:", resposta)

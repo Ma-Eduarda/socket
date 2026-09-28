@@ -62,13 +62,13 @@ public class Cliente {
 
                 String resposta = entrada.nextLine();
                 if (opcao.equals("4") && !resposta.startsWith("ERRO")) {
-                    Files.write(Paths.get("imagem_recebida.png"),Base64.getDecoder().decode(resposta));
+                    Files.write(Paths.get("carameloPedreiro.jpg"),Base64.getDecoder().decode(resposta));
 
-                    System.out.println("Imagem recebida e salva como imagem_recebida.png");
+                    System.out.println("Imagem recebida!");
                     System.out.println();
 
                 } else {
-                    System.out.println(resposta);
+                    System.out.println("Resultado: " + resposta);
                     System.out.println();
                 }
 

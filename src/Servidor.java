@@ -13,7 +13,7 @@ public class Servidor {
     static String imagemBase64;
 
     public static void main(String[] args) throws IOException {
-        byte[] imagem = Files.readAllBytes(Paths.get("imagem_servidor.png"));
+        byte[] imagem = Files.readAllBytes(Paths.get("imagem_servidor.jpg"));
         imagemBase64 = Base64.getEncoder().encodeToString(imagem);
         System.out.println("Imagem carregada.");
 
